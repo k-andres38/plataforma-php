@@ -29,9 +29,9 @@ if(!isset($id)){
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Plataforma Educativa</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon p-0"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -41,11 +41,16 @@ if(!isset($id)){
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
-                    <li class="nav-item dropdown d-flex">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                    
+                </ul>
+
+                <ul class=" navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item dropdown   d-flex">
+                        <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= $nombre ?>
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu p-0">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
@@ -54,7 +59,6 @@ if(!isset($id)){
                             <li><a class="dropdown-item" href="../backend/logout.php">Log Out</a></li>
                         </ul>
                     </li>
-                    
                 </ul>
                 
             </div>
