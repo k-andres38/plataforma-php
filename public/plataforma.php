@@ -54,7 +54,7 @@ if(!isset($id)){
                         <div class="index2">
                             <img class="perfil" src="../imagenes/logo.webp" alt="">
                         </div>
-                            <?= $nombre ?>
+                            <span><?= $nombre ?></span>
                            
                         </a>
                         
