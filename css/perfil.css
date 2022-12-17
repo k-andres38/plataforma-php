@@ -1,0 +1,13 @@
+.perfil{
+    width: 3rem;
+    height: 3rem;
+    border: gray solid 1px;
+    border-radius: 50%;
+
+}
+
+.index2{
+    display: flex;
+    position: absolute;
+    margin-right: 10em;
+}
