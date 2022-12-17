@@ -1,0 +1,22 @@
+.d-block{
+    width: 50%;
+    height: 90vh;
+}
+
+.index{
+    display: flex;
+    position: absolute;
+    border: 3px solid rgb(0, 255, 30);
+    z-index: 100;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    
+}
+
+.logo{
+    width: 100%;
+    border-radius: 50%;
+}

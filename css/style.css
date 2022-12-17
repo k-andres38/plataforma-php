@@ -1,0 +1,23 @@
+/* input {
+    border: 2px solid currentcolor;
+  } */
+  input:invalid {
+    border: 2px dashed red;
+  }
+  input:invalid:focus {
+    background-image: linear-gradient(rgb(168, 15, 15), rgb(191, 203, 191));
+    /* background-color: red; */
+    color:white;
+    
+    /* background-color: red; */
+  }
+  input:valid:focus {
+    background-image: linear-gradient(rgb(28, 15, 168), rgb(191, 203, 191));
+    /* background-color: red; */
+    color:white;
+    
+    
+    /* background-color: red; */
+  }
+
+  
