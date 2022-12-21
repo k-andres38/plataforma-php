@@ -1,6 +1,6 @@
 .d-block{
-    width: 50%;
-    height: 90vh;
+    width: 100vw;
+    height: 89vh;
 }
 
 .index{
@@ -19,4 +19,14 @@
 .logo{
     width: 100%;
     border-radius: 50%;
+}
+
+
+/*foooter*/
+
+.footer__uno{
+    height:5.5vh;
+    
+    
+    
 }

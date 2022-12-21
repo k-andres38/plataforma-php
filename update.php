@@ -25,7 +25,7 @@ $resul=mysqli_query($conex,$query);
         echo "algo falla";
     }
 
-   header("Location:public/index.php");
+   header("Location:public/tablas.php");
 
 };
 

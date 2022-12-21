@@ -38,22 +38,10 @@ $result = mysqli_query($conex, $consul);
                 </div>
                 <div class="modal-body">
 
-                    <form class="m-auto container bg-primary bg-gradient bg-opacity-50" action="formulario.php" method="POST">
+                    <form class="m-auto container bg-primary bg-gradient bg-opacity-50 pt-3 rounded-1 " action="formulario.php" method="POST">
 
 
-                        <div class="mb-3 container pt-3">
-                            <select class="form-select" aria-label="Default select example" name="select" required>
-                                <?php
-                                while ($row = mysqli_fetch_array($result)) {
-                                ?>
-                                    <option value='<?= $row['id'] ?>'><?= $row['nombre'] ?></option>
-                                <?php
-                                };
-                                ?>
-
-
-                            </select>
-                        </div>
+                            <input type="hidden" name="select" value="5">
 
                         <div class="mb-3 container">
                             <label for="nombre" class="form-label text-black">Nombre</label>

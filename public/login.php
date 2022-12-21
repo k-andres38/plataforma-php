@@ -1,5 +1,30 @@
+<?php
+
+// $_SESSION['intentos']++;
+// if($_SESSION['intentos']>1){
+//     session_start();
+//     $mensaje = $_SESSION['mensaje'];
+// }
+
+
+//$status=session_status() === PHP_SESSION_ACTIVE ?: session_start();
+// if(PHP_SESSION_ACTIVE){
+    
+//     //session_abort();
+   
+// }
+//     session_start();
+   
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Es">
 
 <head>
     <meta charset="UTF-8">
@@ -19,6 +44,7 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
+            <div class="alert alert-danger mt-2 w-75 m-auto mb-0 pt-2 d-none" id="alerta"><span class="text-center" >Usuario o Contraseña inconrrectos 😓</span></div>
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -50,7 +76,23 @@
             </div>
         </div>
     </div>
+    <!-- <?php 
+
+
+        if($_SESSION['intento']===""){
+            
+        
+            $_SESSION['intento']++;
+
+                
+
+        }else{
+            echo "<script>document.getElementById('alerta').classList.remove('d-none');</script>";    
+        }
+
+?> -->
 
 </body>
 
 </html>
+

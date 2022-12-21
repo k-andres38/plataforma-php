@@ -115,7 +115,7 @@ $result=mysqli_query($conex,$consul);
 
 
             <input type="hidden" name="id" value='<?php echo $p[0] ?>'>
-            <a href="./index.php" class="btn btn-secondary">cerrar</a>
+            <a href="../public/plataforma.php" class="btn btn-secondary">cerrar</a>
             <button type="submit" class="btn btn-success" name="actualizar">Actualizar</button>
 
 

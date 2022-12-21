@@ -23,12 +23,10 @@ if(isset($_POST)){
 
         header("Location: ../public/plataforma.php ");
     }else{
-        ?>
-        <script>
-            alert("No te has logueado")
-        </script>
-    
-        <?php
+        session_start();
+
+        $_SESSION['mensaje']='Usuario o Contraseña inconrrectos 😓';
+        $_SESSION['alerta']='prueba';
           header("Location: ../public/index.php");  
 };
 };

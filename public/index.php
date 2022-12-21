@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="Es">
 
@@ -7,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="../css/index.css">
 
@@ -82,7 +90,7 @@
 
 
 <footer class="fixed-bottom bg-primary ">
-  <div class="d-flex justify-content-around  align-items-center" >
+  <div class="d-flex justify-content-around  align-items-center footer__uno" >
     <div class="d-flex justify-content-between  align-items-center  ">
       <h6 class="mb-0 mr-2">Contacto <span class="text-white mb-0 ">  314 123 45 67</span>  </h6> 
       
@@ -91,5 +99,34 @@
     <div><span class="fs-8 text-white">todos los derechos reservados 2022</span></div>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 </html>
+
+<?php
+
+
+if($_SESSION['mensaje']){
+
+
+?>
+<script>
+
+
+  $(function(){
+    $('#exampleModal').modal('show');
+  });
+
+
+</script>
+
+<?php
+};
+//unset($_SESSION['mensaje']);
+session_destroy();
+
+
+
+?>
