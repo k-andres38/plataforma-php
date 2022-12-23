@@ -16,11 +16,6 @@ if(!$id){
     session_destroy();
 }
 
-
-
-
-
-
 ?>
 
 

@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$rol= $_SESSION['estado'];
+$id= $_SESSION['id'];
+if(!$id){
+    header("Location: ../public/index.php");
+    session_destroy();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
