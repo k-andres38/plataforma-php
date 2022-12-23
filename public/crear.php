@@ -52,9 +52,11 @@ $result = mysqli_query($conex, $consul);
     <select class="form-select" aria-label="Default select example" name="select" required>
         <?php
         while ($row = mysqli_fetch_array($result)) {
+            if($idrol<3){ 
         ?>
-            <option value='<?= $row['id'] ?>'><?= $row['nombre'] ?></option>
+           <?php if($idrol<2){?><option value='<?= $row['id'] ?>'><?= $row['nombre'] ?></option><?php };?>
         <?php
+            };
         };
         ?>
 

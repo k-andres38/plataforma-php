@@ -1,3 +1,29 @@
+<?php
+session_start();
+
+$rol=$_SESSION['estado'];
+if(!$rol>3){
+    session_start();
+    session_destroy();
+    header("Location: ../public/plataforma.php");
+}
+
+
+$rol= $_SESSION['estado'];
+$id= $_SESSION['id'];
+if(!$id){
+    header("Location: ../public/index.php");
+    session_destroy();
+}
+
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,11 +40,8 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-lg bg-primary d-flex justify-content-end   ">
-      <ul class="d-flex flex-direccion mb-0 " style="list-style:none">
-        <li  ><a href="../public/plataforma.php" class="btn btn-primary">Home</a></li>
+    <nav class="navbar navbar-expand-lg bg-primary d-flex justify-content-end">
       
-      </ul>
 
     </nav>
 
@@ -27,20 +50,7 @@
 
     <main>
 
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Tabla
-        </button> -->
-
-        <!-- Modal -->
-        <!-- <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tabal de Usuario con su rol</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body"> -->
+        
                         <div class="table-responsive m-auto">
 
                             <table class="table table-sm align-middle  table-success table-striped table-hover table-bordered">
@@ -52,15 +62,17 @@
                                         <th class="text-black text-center">APELLIDO</th>
 
                                         <th class="text-black text-center">USERNAME</th>
-                                        <th class="text-black text-center">PASSWORD</th>
+                                      <?php  if($rol<3){ ?><th class="text-black text-center">PASSWORD</th><?php };?>
                                         <th class="text-black text-center">CORREO</th>
 
-                                        <th colspan="2" class="text-black text-center"><?php include '../public/crear.php'; ?></th>
+                                        <?php
+
+if($rol<3){ ?><th colspan="2" class="text-black text-center"><?php include '../public/crear.php'; ?></th><?php }else{ echo "<th colspan='2' class='text-black text-center'></th>";};?>
 
 
                                     </tr>
                                 </thead>
-                                <tbody class="text-center" ">
+                                <tbody class="text-center" >
 <?php
 include '../conexion.php';
 include '../eliminar.php';
@@ -83,33 +95,19 @@ while ($file = mysqli_fetch_row($consul)) {
 <td class='text-black'>$row[1]</td>
 <td class='text-black'>$file[2]</td>
 <td class='text-black'>$file[3]</td>
-<td class='text-black'>$file[4]</td>
-<td class='text-black'>$file[5]</td>
-<td class='text-black'>$file[6]</td>";
+<td class='text-black'>$file[4]</td>";
+ if($rol<3){ ?><td class='text-black'><?=$file[5]?></td><?php };?>
+<td class='text-black'><?=$file[6]?></td>
 
-    $consulta2 = "select * from rol where id='$file[0]'";
+ <?php   $consulta2 = "select * from rol where id='$file[0]'";
 
 ?>
-<td>
-  
 
-<a href=" editar.php?editar=<?php echo $file[0] ?> " class=" btn btn-primary">editar</a>
+<td><?php if($rol<3){ ?><a href=" editar.php?editar=<?php echo $file[0] ?> " class=" btn btn-primary">editar</a></td class="align-bottom"><?php }; ?>
 
-                                    </td class="align-bottom">
-                                <?php
-
-
-
-
-                                echo "<td>
-<form  method='POST'>
-<button class='btn btn-danger' name='id' value='$file[0]' ;'  >eliminar</button>
-</form>
-</td>
-
-</tr>
-
-";
+<?php if($rol<3){  echo "<td><form  method='POST'>
+<button  class='btn btn-danger' name='id' value='$file[0]' >eliminar</button>
+</form></td></tr>"; };
                             };
 
                                 ?>
@@ -118,7 +116,7 @@ while ($file = mysqli_fetch_row($consul)) {
                             </table>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -126,7 +124,7 @@ while ($file = mysqli_fetch_row($consul)) {
     </main>
 
 
-    
+
 
 
 </body>
@@ -134,15 +132,3 @@ while ($file = mysqli_fetch_row($consul)) {
 
 
 </html>
-<?php
-if(true){
-    ?>
-    <script>
-        $(function(){
-            $('#exampleModal').modal('show')
-        });
-    </script>
-    <?php
-};
-
-?>

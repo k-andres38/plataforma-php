@@ -1,0 +1,9 @@
+
+
+.cards:hover{
+
+    /* transform: rotate(2deg); */
+    cursor: pointer;
+    zoom: 110%;
+    /* box-shadow: ; */
+}

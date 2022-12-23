@@ -1,24 +1,7 @@
 <?php
 
-// $_SESSION['intentos']++;
-// if($_SESSION['intentos']>1){
-//     session_start();
-//     $mensaje = $_SESSION['mensaje'];
-// }
-
-
-//$status=session_status() === PHP_SESSION_ACTIVE ?: session_start();
-// if(PHP_SESSION_ACTIVE){
-    
-//     //session_abort();
-   
-// }
-//     session_start();
-   
-
-
-
-
+ session_start();
+ 
 ?>
 
 
@@ -76,21 +59,27 @@
             </div>
         </div>
     </div>
-    <!-- <?php 
+     <?php 
 
 
-        if($_SESSION['intento']===""){
+if(isset($_SESSION['mensaje'])){
+    $mensaje = $_SESSION['mensaje'];
+    if($mensaje){
             
         
-            $_SESSION['intento']++;
+        echo "<script>document.getElementById('alerta').classList.remove('d-none');</script>";    
 
-                
+            
 
-        }else{
-            echo "<script>document.getElementById('alerta').classList.remove('d-none');</script>";    
-        }
+    };
+    session_destroy();
+ }
+   
+       
+    
+        
 
-?> -->
+?> 
 
 </body>
 

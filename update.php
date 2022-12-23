@@ -24,7 +24,7 @@ $resul=mysqli_query($conex,$query);
     if(!$resul){
         echo "algo falla";
     }
-
+    echo "holii";
    header("Location:public/tablas.php");
 
 };

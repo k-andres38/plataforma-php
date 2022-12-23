@@ -6,9 +6,6 @@ include '../conexion.php';
 if (isset($_GET['editar'])) {
     $editar = $_GET['editar'];
 
-    
-
-
     $user = "select * from usuario where id=$editar";
 
     $usuario = mysqli_query($conex, $user);
@@ -62,7 +59,7 @@ $result=mysqli_query($conex,$consul);
             <h5 class="modal-title text-center text-black" id="staticBackdropLabel2">Actualizar Usuario</h5>
 
         </div>
-        <div ">
+        <div >
                     <form class=" m-auto " style=" width: 23rem; " action="../update.php" method="POST">
 
             <div class="mb-3 container">
@@ -70,7 +67,8 @@ $result=mysqli_query($conex,$consul);
                     <?php
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
-                        <option value='<?= $row['id'] ?>'><?= $row['nombre'] ?></option>
+                        <option value='<?= $row['id'] ?>' selected><?= $row['nombre'] ?></option>
+                        
                     <?php
                     };
                     ?>
@@ -91,7 +89,7 @@ $result=mysqli_query($conex,$consul);
                 <input type="text" class="form-control" id="Apellido" name="apellido" value='<?php echo $p[3] ?>' placeholder="apellido">
 
             </div>
-
+                    
             <div class="mb-3 container">
                 <label for="username" class="form-label text-black">Username</label>
                 <input type="text" class="form-control" id="username" name="username" value='<?php echo $p[4] ?>' placeholder="username">
@@ -115,7 +113,7 @@ $result=mysqli_query($conex,$consul);
 
 
             <input type="hidden" name="id" value='<?php echo $p[0] ?>'>
-            <a href="../public/plataforma.php" class="btn btn-secondary">cerrar</a>
+            <a href="../public/tablas.php" class="btn btn-secondary">cerrar</a>
             <button type="submit" class="btn btn-success" name="actualizar">Actualizar</button>
 
 

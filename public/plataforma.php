@@ -3,11 +3,19 @@
 session_start();
 
 $nombre = $_SESSION['nombre'];
+$idrol=$_SESSION['estado'];
+$puesto=$_SESSION['puesto'];
 
 $id = $_SESSION['id'];
 if (!isset($id)) {
+    session_destroy();
     header("Location: ../public/index.php");
-}
+    
+};
+
+
+
+
 
 ?>
 
@@ -87,34 +95,60 @@ if (!isset($id)) {
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <div>
+                    <div class=""><span class="fs-4 "><?= $puesto?></span></div>
+                    <div class="">
 
-                        <div class="border border-end-0 border-start-0 mb-2 d-flex align-items-center justify-content-center">
-                            <h6 class="text-center text-black ">core</h6>
+                        <div class="border border-end-0 border-start-0 d-flex align-items-center justify-content-center pt-3">
+                            <h6 class="text-center text-black mb-0  ">Invitado</h6>
                         </div>
                         <ul class="text-center p-0">
-                        <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark "><a href="#" target="_blank" class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Tarea 1</span></a></li>
+                        <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark "><a href="#"  class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Tarea 1</span></a></li>
                              
-                            <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark  " ><a href="#" target="_blank" class="text-decoration-none "><span class="fs-5  text-white">Tarea 2</span></a></li>
+                            <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark  " ><a href="#"  class="text-decoration-none "><span class="fs-5  text-white">Tarea 2</span></a></li>
                         </ul>
 
                     </div>
 
-
+                    <?php if($idrol<4){ 
+                        
+                        ?>
                     <div>
 
-                        <div class="border border-end-0 border-start-0 mb-2">
-                            <h6 class="text-center text-black">Administración</h6>
+                        <div class="border border-end-0 border-start-0 pt-3">
+                            <h6 class="text-center text-black mb-0">admin y jefe</h6>
                         </div>
+
+                        <ul class="text-center p-0">
+                        
+                        <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark "><a href="../calculadora/index.php" class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Calculadora</span></a></li>
+                        <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark "><a href="#" class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Tarea 1</span></a></li>
+
+                             
+                            <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark  " ><a href="#" class="text-decoration-none "><span class="fs-5  text-white">Tarea 2</span></a></li>
+                        </ul>
+
+                    </div>
+
+                   
+                    <div class="border border-end-0 border-start-0 pt-3 ">
+                            <h6 class="text-center text-black mb-0">Administración</h6>
+                        </div>
+                        
 
                         <ul class="text-center p-0">
                         <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark "><a href="../public/tablas.php" target="_blank" class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Tabla</span></a></li>
-                        <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark "><a href="#" target="_blank" class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Tarea 1</span></a></li>
+                        <?php if($idrol<3){ ?>
+                        <li style="list-style: none;--bs-bg-opacity:.2" class="bg-dark "><a href="#" target="_blank" class="text-decoration-none  mb-2  "><span class="fs-5 text-white">Tarea 1</span></a></li>
                              
                             <li style="list-style: none;--bs-bg-opacity: .2" class="bg-dark  " ><a href="#" target="_blank" class="text-decoration-none "><span class="fs-5  text-white">Tarea 2</span></a></li>
                         </ul>
 
                     </div>
+
+                    <?php
+                    };
+                         };
+                    ?>
 
                   
 
@@ -127,10 +161,10 @@ if (!isset($id)) {
             <!-- <div class="container bg-success opacity-50 w-100">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia dolorum dolorem provident consequuntur quos earum sit, dicta doloremque nemo maxime odit ex. Nam magni possimus placeat amet similique quidem aperiam!
         </div> -->
-
-            <div class="row m-2">
-                <div class="col-sm-4">
-                    <div class="card" style="width: 15rem;">
+        <?php if($idrol<3){ ?>
+            <div class="row m-2 ">
+                <div class="col-sm-4 ">
+                    <div class="card shadow" style="width: 15rem;">
                         <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="#" class=" text-decoration-none">
@@ -144,22 +178,7 @@ if (!isset($id)) {
 
             <div class="row m-2">
                 <div class="col-sm-4">
-                    <div class="card" style="width: 15rem;">
-                        <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <a href="#" class=" text-decoration-none">
-                                <p class="text-black fs-4 text-center">Calculadora en CSS, HTML Y PHP</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row m-2">
-                <div class="col-sm-4">
-                    <div class="card" style="width: 15rem;">
+                    <div class="card shadow" style="width: 15rem;">
                         <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="#" class=" text-decoration-none">
@@ -174,7 +193,7 @@ if (!isset($id)) {
 
             <div class="row m-2">
                 <div class="col-sm-4">
-                    <div class="card" style="width: 15rem;">
+                    <div class="card shadow" style="width: 15rem;">
                         <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="#" class=" text-decoration-none">
@@ -189,7 +208,22 @@ if (!isset($id)) {
 
             <div class="row m-2">
                 <div class="col-sm-4">
-                    <div class="card" style="width: 15rem;">
+                    <div class="card shadow" style="width: 15rem;">
+                        <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="#" class=" text-decoration-none">
+                                <p class="text-black fs-4 text-center">Calculadora en CSS, HTML Y PHP</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row m-2">
+                <div class="col-sm-4">
+                    <div class="card shadow" style="width: 15rem;">
                         <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="#" class=" text-decoration-none">
@@ -202,7 +236,7 @@ if (!isset($id)) {
 
             <div class="row m-2">
                 <div class="col-sm-4">
-                    <div class="card" style="width: 15rem;">
+                    <div class="card shadow" style="width: 15rem;">
                         <img src="../imagenes/plataforma/calc.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <a href="#" class=" text-decoration-none">
@@ -213,7 +247,9 @@ if (!isset($id)) {
                 </div>
             </div>
 
-
+            <?php
+                         };
+                    ?>
         </section>
 
 
