@@ -79,6 +79,17 @@
 
 
   </main>
+  <?php 
+    if (!empty($_GET['pro'])) {
+      ?>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        swal("Registro exitoso", "", "success");
+      </script>
+      <?php
+
+    }
+  ?>
 
 
 </body>

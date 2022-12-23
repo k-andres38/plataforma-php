@@ -22,7 +22,7 @@ if (isset($_POST["enviar"])) {
     if($sentencia){
         
 
-       header("Location:../public/index.php?pro=1");
+       header("Location:../public/tablas.php");
     };
 
 
