@@ -1,9 +1,9 @@
 <?php
 
-$host = '127.0.0.1';
-$user = 'usuario';
-$password = 'carlos';
-$db = 'empresa';
+$host = 'localhost';
+$user = 'id20052174_usuario';
+$password = 'Carlos_123456789';
+$db = 'id20052174_empresa';
 
 $conex = mysqli_connect($host, $user, $password, $db);
 

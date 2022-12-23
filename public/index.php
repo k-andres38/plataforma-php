@@ -86,11 +86,7 @@
 
 <footer class="fixed-bottom bg-primary ">
   <div class="d-flex justify-content-around  align-items-center footer__uno">
-    <div class="d-flex justify-content-between  align-items-center  ">
-      <h6 class="mb-0 mr-2">Contacto <span class="text-white mb-0 "> 314 123 45 67</span> </h6>
-
-
-    </div>
+    
     <div><span class="fs-8 text-white">todos los derechos reservados 2022</span></div>
   </div>
 </footer>

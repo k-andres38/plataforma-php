@@ -1,7 +1,9 @@
 <?php
 session_start();
+$id = ( isset($_SESSION['id'] )) ? $_SESSION['id'] : '';
+$rol = ( isset($_SESSION['estado'] )) ? $_SESSION['estado'] : '';
 
-$rol=$_SESSION['estado'];
+
 if(!$rol>3){
     session_start();
     session_destroy();
@@ -9,8 +11,7 @@ if(!$rol>3){
 }
 
 
-$rol= $_SESSION['estado'];
-$id= $_SESSION['id'];
+
 if(!$id){
     header("Location: ../public/index.php");
     session_destroy();

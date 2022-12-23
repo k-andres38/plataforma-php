@@ -1,11 +1,8 @@
 <?php
-
- session_start();
- 
+if( empty(session_id()) && !headers_sent()){
+    session_start();
+}
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="Es">
 
@@ -32,7 +29,7 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body  ">
+                <div class="modal-body">
 
 
                     <form class="modal-body form-control bg-primary bg-gradient bg-opacity-50" method="POST" action="../backend/log.php">
@@ -59,29 +56,22 @@
             </div>
         </div>
     </div>
-     <?php 
 
-
-if(isset($_SESSION['mensaje'])){
-    $mensaje = $_SESSION['mensaje'];
-    if($mensaje){
-            
-        
-        echo "<script>document.getElementById('alerta').classList.remove('d-none');</script>";    
-
-            
-
-    };
-    session_destroy();
- }
-   
-       
     
-        
-
-?> 
 
 </body>
 
 </html>
+<?php 
 
+
+    if(isset($_SESSION['mensaje'])){
+        $mensaje = $_SESSION['mensaje'];
+        if($mensaje){
+                
+            echo "<script>document.getElementById('alerta').classList.remove('d-none');</script>"; 
+        };
+        session_destroy();
+     };
+   
+?>

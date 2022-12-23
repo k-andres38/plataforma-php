@@ -1,12 +1,12 @@
 <?php
 
 session_start();
+$nombre = ( isset($_SESSION['nombre'] )) ? $_SESSION['nombre'] : '';
 
-$nombre = $_SESSION['nombre'];
-$idrol=$_SESSION['estado'];
-$puesto=$_SESSION['puesto'];
+$idrol=( isset($_SESSION['idrol'] )) ? $_SESSION['idrol'] : '';
+$puesto= ( isset($_SESSION['puesto'] )) ? $_SESSION['puesto'] : '';
 
-$id = $_SESSION['id'];
+$id = ( isset($_SESSION['id'] )) ? $_SESSION['id'] : '';
 if (!isset($id)) {
     session_destroy();
     header("Location: ../public/index.php");

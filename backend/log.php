@@ -36,9 +36,7 @@ if(isset($_POST)){
         header("Location: ../public/plataforma.php ");
     }else{
         session_start();
-
         $_SESSION['mensaje']='usuario';
-        // $_SESSION['alerta']='prueba';
-          header("Location: ../public/index.php?p=0");  
+         header("Location: ../public/index.php?p=0");  
 };
 };

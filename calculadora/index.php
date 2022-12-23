@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$rol= $_SESSION['estado'];
-$id= $_SESSION['id'];
+$rol= ( isset($_SESSION['estado'] )) ? $_SESSION['estado'] : '';
+$id=( isset($_SESSION['id'] )) ? $_SESSION['id'] : '';
 if(!$id){
     header("Location: ../public/index.php");
     session_destroy();

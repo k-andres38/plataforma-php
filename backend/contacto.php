@@ -17,7 +17,7 @@ if(isset($_POST['enviar'])){
    
    if($contacto){
       if(strlen($email)>1 && strlen($asunto)>1){
-         mail('kandres38@gmail.com',$asunto,$comentarios);
+         mail($email,$asunto,$comentarios);
     session_start();
     $_SESSION['envio']="formulario";
     
